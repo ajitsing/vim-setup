@@ -1,0 +1,9 @@
+let g:airline_powerline_fonts = 0
+let g:airline_theme='badwolf'
+let g:airline_linecolumn_prefix='¶'
+let g:airline_left_sep = '»'
+let g:airline_right_sep = '«'
+let g:airline_symbols.linenr = '␤'
+let g:airline_fugitive_prefix = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.whitespace = 'Ξ'
