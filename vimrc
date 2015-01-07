@@ -1,5 +1,4 @@
 " Basic settings {{{
-set nocompatible              " Eliminate backwards-compatability
 set number                    " Enable line numbers
 set ruler                     " Turn on the ruler
 syntax on                     " Syntax highlighting
@@ -12,33 +11,33 @@ let mapleader=","
 "}}}
 
 " Plugins {{{
-filetype on                  " Req'd for vundle
+set nocompatible              " be iMproved, required
+filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Bundle 'gmarik/vundle'
-Bundle 'scrooloose/nerdtree'
-Bundle 'kien/ctrlp.vim'
-Bundle 'scrooloose/syntastic'
-Bundle 'bling/vim-airline'
-Bundle 'xolox/vim-misc'
-Bundle 'tpope/vim-fugitive'
-Bundle 'oplatek/Conque-Shell'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'jiangmiao/auto-pairs'
-Bundle 'tpope/vim-endwise'
-Bundle 'nelstrom/vim-visual-star-search'
-Bundle 'mileszs/ack.vim'
-Bundle 'joequery/Stupid-EasyMotion'
-Bundle 'qstrahl/vim-matchmaker'
-Bundle 'ervandew/supertab'
-Bundle 'terryma/vim-multiple-cursors'
-Bundle 'rking/ag.vim'
-"}}}
+Plugin 'gmarik/vundle'
+Plugin 'scrooloose/nerdtree'
+Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'bling/vim-airline'
+Plugin 'xolox/vim-misc'
+Plugin 'tpope/vim-fugitive'
+Plugin 'oplatek/Conque-Shell'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'tpope/vim-endwise'
+Plugin 'nelstrom/vim-visual-star-search'
+Plugin 'mileszs/ack.vim'
+Plugin 'joequery/Stupid-EasyMotion'
+Plugin 'qstrahl/vim-matchmaker'
+Plugin 'ervandew/supertab'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'rking/ag.vim'
 
-" Post-vundle {{{
-filetype plugin indent on     " Req'd for vundle
+call vundle#end()            " required
+filetype plugin indent on    " required
 "}}}
 
 "AirLine {{{
