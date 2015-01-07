@@ -11,7 +11,8 @@ if [ -d ~/"${vim_folder}" ]; then
 fi
 
 echo "creating ~/.vim folder..."
-mv ../vim-setup ~/.vim
+mkdir ~/.vim
+cp -R * ~/.vim/.
 
 echo "copying vim configuration(.vimrc)..."
 cp ~/.vim/vimrc ~/.vimrc
