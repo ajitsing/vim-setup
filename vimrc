@@ -13,8 +13,8 @@ let mapleader=","
 
 " Plugins {{{
 filetype on                  " Req'd for vundle
-set rtp+=~/.vim/bundle/vundle " Vundle prelude
-call vundle#rc()              " ^
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 Bundle 'gmarik/vundle'
 Bundle 'scrooloose/nerdtree'
