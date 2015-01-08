@@ -1,4 +1,5 @@
 " Basic settings {{{
+highlight Comment term=bold ctermfg=white
 set number                    " Enable line numbers
 set ruler                     " Turn on the ruler
 syntax on                     " Syntax highlighting
@@ -7,6 +8,11 @@ set shiftwidth=2
 set cursorline
 set autoindent
 
+set incsearch       "Lookahead as search pattern is specified
+set ignorecase      "Ignore case in all searches...
+set smartcase       "...unless uppercase letters used
+
+"...search settings
 set incsearch       "Lookahead as search pattern is specified
 set ignorecase      "Ignore case in all searches...
 set smartcase       "...unless uppercase letters used
@@ -74,8 +80,7 @@ nnoremap <leader>e :source %<cr>
 nnoremap t :tabnew<cr>
 nnoremap qt :q<cr>
 nnoremap gn gt
-nnoremap <silent><BS> :set nohlsearch<cr>
-nnoremap / :set hlsearch<cr>/
+nnoremap <silent><BS> :set nohlsearch<cr>:call HLNextOff()<cr>
 nnoremap <leader>p :execute "rightbelow tabe " . bufname('#')<cr>
 nnoremap <leader>s :%s///g<LEFT><LEFT><LEFT>
 
@@ -112,6 +117,11 @@ autocmd BufWritePre *.html :normal gg=G
 "autocommand groups {{{
 augroup testgroup
 	"autocmd
+augroup END
+
+augroup VimReload
+autocmd!
+    autocmd BufWritePost $MYVIMRC source $MYVIMRC
 augroup END
 "}}}
 
