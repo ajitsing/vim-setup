@@ -4,9 +4,16 @@ set ruler                     " Turn on the ruler
 syntax on                     " Syntax highlighting
 set tabstop=2
 set shiftwidth=2
-set incsearch
 set cursorline
-set ignorecase
+set autoindent
+
+set incsearch       "Lookahead as search pattern is specified
+set ignorecase      "Ignore case in all searches...
+set smartcase       "...unless uppercase letters used
+
+set hlsearch        "Highlight all matches
+highlight clear Search
+highlight       Search    ctermfg=White
 let mapleader=","
 "}}}
 
@@ -50,26 +57,48 @@ let g:airline_theme='badwolf'
 "}}}
 
 "Mappings {{{
-nnoremap <C-t> :CtrlPTag<CR>
 nnoremap <leader>n :NERDTree<CR>
 nnoremap ; :
 nnoremap <C-q> :q<cr>
-inoremap jk <Esc>
-noremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap <F2> :set rnu!<CR>
 nnoremap <F3> :set nu!<CR>
-imap <c-d> <esc>ddi
-imap <c-u> <esc>viwUi
 nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel"
 nnoremap <leader>' viw<esc>a'<esc>hbi'<esc>lel'
 nnoremap - ddp
 nnoremap _ kddpk
 nnoremap H ^
-nnoremap L $
-inoremap <c-u> <esc>viwU<esc>ea
+nnoremap L g_
 nnoremap <leader>e :source %<cr>
+nnoremap t :tabnew<cr>
+nnoremap qt :q<cr>
+nnoremap gn gt
+nnoremap <silent><BS> :set nohlsearch<cr>
+nnoremap / :set hlsearch<cr>/
 nnoremap <leader>p :execute "rightbelow tabe " . bufname('#')<cr>
+nnoremap <leader>s :%s///g<LEFT><LEFT><LEFT>
+
+vnoremap H ^
+vnoremap L g_
+vnoremap ; :
+
+inoremap <c-d> <esc>ddi
+inoremap <c-u> <esc>viwUi
+inoremap jk <Esc>
+inoremap <c-u> <esc>viwU<esc>ea
+
+if has('persistent_undo')
+    " Save all undo files in a single location (less messy, more risky)...
+    set undodir=$HOME/tmp/.VIM_UNDO_FILES
+
+    " Save a lot of back-history...
+    set undolevels=5000
+
+    " Actually switch on persistent undo
+    set undofile
+
+endif
 ""}}}
 
 "Movement Mapping {{{
@@ -91,8 +120,6 @@ augroup filetype_vim
 	autocmd!
 	autocmd FileType vim setlocal foldmethod=marker
 augroup END
-
-match Error / $/
 " }}}
 
 "json compatibility {{{
