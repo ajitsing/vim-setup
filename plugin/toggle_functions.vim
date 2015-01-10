@@ -32,7 +32,7 @@ function! ToggleNumber()
 	if &nu == 1
 		set nu!
 	elseif &rnu == 1
-		set rnu!
+		set nornu
 	else
 		set nu
 	endif

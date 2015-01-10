@@ -7,6 +7,7 @@ set tabstop=2
 set shiftwidth=2
 set cursorline
 set autoindent
+set smartindent "auto indentation for blocks
 
 set incsearch       "Lookahead as search pattern is specified
 set ignorecase      "Ignore case in all searches...
@@ -63,6 +64,7 @@ let g:airline_theme='badwolf'
 "}}}
 
 "Mappings {{{
+nnoremap <silent><leader>v :set paste!<cr>
 nnoremap <leader>n :NERDTree<CR>
 nnoremap ; :
 nnoremap <C-q> :q<cr>
@@ -79,10 +81,12 @@ nnoremap L g_
 nnoremap <leader>e :source %<cr>
 nnoremap t :tabnew<cr>
 nnoremap qt :q<cr>
-nnoremap gn gt
 nnoremap <silent><BS> :set nohlsearch<cr>:call HLNextOff()<cr>
 nnoremap <leader>p :execute "rightbelow tabe " . bufname('#')<cr>
 nnoremap <leader>s :%s///g<LEFT><LEFT><LEFT>
+nnoremap <leader>a ggvG
+nnoremap <right> :tabnext<cr>
+nnoremap <left> :tabprevious<cr>
 
 vnoremap H ^
 vnoremap L g_
@@ -115,8 +119,10 @@ autocmd BufWritePre *.html :normal gg=G
 "}}}
 
 "autocommand groups {{{
-augroup testgroup
-	"autocmd
+augroup folding
+	autocmd!
+	autocmd BufRead *.rb *.js *.java *.vim *.scala :foldmethod=indent
+	autocmd BufRead *.rb *.js *.java *.vim *.scala :foldignore=
 augroup END
 
 augroup VimReload
