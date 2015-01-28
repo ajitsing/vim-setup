@@ -1,0 +1,13 @@
+factorial = (n):
+    total = 1
+    n to 1 (i):
+				#multiply the running total
+        total *= i.
+    total.
+
+10 times (i):
+    i string print
+    '! is: ' print
+    factorial (i) string print
+    "\n" print.
+#this is a comment in potion.
