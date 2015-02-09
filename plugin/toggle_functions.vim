@@ -1,6 +1,7 @@
 nnoremap <leader>N :call ToggleNumber()<cr>
 nnoremap <leader>q :call QuickFixToggle()<cr>
 nnoremap <leader>t :call TerminalToggle()<cr>
+nnoremap <leader>tk :call SetTaskSyntax()<cr>
 
 let g:terminal_is_open = 0
 
@@ -36,4 +37,8 @@ function! ToggleNumber()
 	else
 		set nu
 	endif
+endfunction
+
+function! SetTaskSyntax()
+	set syn=task
 endfunction
