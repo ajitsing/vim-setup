@@ -8,10 +8,17 @@ set shiftwidth=2
 set cursorline
 set autoindent
 set smartindent "auto indentation for blocks
-
-set incsearch       "Lookahead as search pattern is specified
-set ignorecase      "Ignore case in all searches...
-set smartcase       "...unless uppercase letters used
+set autoread "auto read buffer when file is changed by other editor
+set clipboard=unnamed "yank to system clipboard
+set encoding=utf-8
+set laststatus=2
+set scrolloff=3 "keep minimal number of lines above and below cursor
+set visualbell
+set showcmd "show command line at the bottom of the screen
+set backspace=2 "backspace should behave normally
+set expandtab
+set cindent "syntax-aware auto indent
+set smarttab
 
 "...search settings
 set incsearch       "Lookahead as search pattern is specified
@@ -55,12 +62,25 @@ filetype plugin indent on    " required
 "}}}
 
 "AirLine {{{
+if !exists("g:airline_symbols")
+    let g:airline_symbols = {}
+endif
+
 let g:airline#extensions#tabline#enabled = 1
 set laststatus=2   " Always show the statusline
 set encoding=utf-8 " Necessary to show Unicode glyphs
 set t_Co=256 " Explicitly tell Vim that the terminal supports 256 colors
 set ambiwidth=double
-let g:airline_theme='badwolf'
+let g:airline_theme='powerlineish'
+
+let g:airline_left_sep = '⮀'
+let g:airline_left_alt_sep = '⮁'
+let g:airline_right_sep = '⮂'
+let g:airline_right_alt_sep = '⮃'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.whitespace = 'Ξ'
+let g:airline_section_y = airline#section#create(['%p', '%%'])
+let g:airline_section_z = airline#section#create_right(['%l', '%c'])
 "}}}
 
 "Mappings {{{
