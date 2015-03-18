@@ -141,8 +141,8 @@ autocmd BufWritePre *.html :normal gg=G
 "autocommand groups {{{
 augroup folding
 	autocmd!
-	autocmd BufRead *.rb *.js *.java *.vim *.scala :foldmethod=indent
-	autocmd BufRead *.rb *.js *.java *.vim *.scala :foldignore=
+	"autocmd BufRead *.rb *.js *.java *.vim *.scala :foldmethod=indent
+	"autocmd BufRead *.rb *.js *.java *.vim *.scala :foldignore=
 augroup END
 
 augroup VimReload
