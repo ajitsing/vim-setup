@@ -29,6 +29,7 @@ set hlsearch        "Highlight all matches
 highlight clear Search
 highlight       Search    ctermfg=White
 let mapleader=","
+set nofoldenable    " disable folding"
 "}}}
 
 " Plugins {{{
@@ -56,6 +57,7 @@ Plugin 'qstrahl/vim-matchmaker'
 Plugin 'ervandew/supertab'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'rking/ag.vim'
+"Plugin 'wakatime/vim-wakatime'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -154,6 +156,7 @@ augroup END
 " Vimscript file settings ---------------------- {{{
 augroup filetype_vim
 	autocmd!
+	autocmd FileType vim setlocal foldenable
 	autocmd FileType vim setlocal foldmethod=marker
 augroup END
 " }}}
