@@ -87,13 +87,14 @@ let g:airline_section_z = airline#section#create_right(['%l', '%c'])
 
 "Mappings {{{
 nnoremap <silent><leader>v :set paste!<cr>
-nnoremap <leader>n :NERDTree<CR>
+nnoremap <silent>da ggdGi
+nnoremap <silent><leader>n :NERDTree<CR>
 nnoremap ; :
 nnoremap <C-q> :q<cr>
-nnoremap <leader>ev :vsplit $MYVIMRC<cr>
-nnoremap <leader>sv :source $MYVIMRC<cr>
-nnoremap <F2> :set rnu!<CR>
-nnoremap <F3> :set nu!<CR>
+nnoremap <silent><leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <silent><leader>sv :source $MYVIMRC<cr>
+nnoremap <silent><F2> :set rnu!<CR>
+nnoremap <silent><F3> :set nu!<CR>
 nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel"
 nnoremap <leader>' viw<esc>a'<esc>hbi'<esc>lel'
 nnoremap - ddp
@@ -101,14 +102,14 @@ nnoremap _ kddpk
 nnoremap H ^
 nnoremap L g_
 nnoremap <leader>e :source %<cr>
-nnoremap t :tabnew<cr>
-nnoremap qt :q<cr>
+nnoremap <silent>t :tabnew<cr>
+nnoremap <silent>qt :q<cr>
 nnoremap <silent><BS> :set nohlsearch<cr>:call HLNextOff()<cr>
-nnoremap <leader>p :execute "rightbelow tabe " . bufname('#')<cr>
+nnoremap <silent><leader>p :execute "rightbelow tabe " . bufname('#')<cr>
 nnoremap <leader>s :%s///g<LEFT><LEFT><LEFT>
-nnoremap <leader>a ggvG
-nnoremap <right> :tabnext<cr>
-nnoremap <left> :tabprevious<cr>
+nnoremap <leader>a ggVG
+nnoremap <silent><right> :tabnext<cr>
+nnoremap <silent><left> :tabprevious<cr>
 
 vnoremap H ^
 vnoremap L g_
@@ -116,7 +117,7 @@ vnoremap ; :
 
 inoremap <c-d> <esc>ddi
 inoremap <c-u> <esc>viwUi
-inoremap jk <Esc>
+inoremap <silent>jk <Esc>
 inoremap <c-u> <esc>viwU<esc>ea
 
 if has('persistent_undo')
