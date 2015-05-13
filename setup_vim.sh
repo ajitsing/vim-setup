@@ -20,5 +20,11 @@ cp ~/.vim/vimrc ~/.vimrc
 echo "setting up vundle..."
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
+vim \
+-u "~/.vimrc" \
+"+set nomore" \
+"+BundleInstall!" \
+"+BundleClean" \
+"+qall"
+
 echo "congratulations, your vim setup is complete!"
-echo "now open ~/.vimrc and run :BundleInstall to install all the plugins...."
